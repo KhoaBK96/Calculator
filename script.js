@@ -22,7 +22,11 @@ function operate(number1, number2, operators ){
             return  number = multiply(Number(number1),Number(number2))
             break
         case "/":
+            if(Number(number2) != 0){
             return  number = divide(Number(number1),Number(number2))
+            } else{
+                alert("You can't divide by 0!")
+            }
             break
     }   
 }
@@ -81,5 +85,11 @@ const equalsButton = document.querySelector('.equals')
 equalsButton.addEventListener('click', e => {
     operate(firstNumber, secondNumber, operator)
     console.log( operate(firstNumber, secondNumber, operator))
+    display()
+})
+
+const clearButton = document.querySelector('.clear')
+clearButton.addEventListener('click', e => {
+    number = 0
     display()
 })
